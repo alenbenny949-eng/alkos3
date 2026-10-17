@@ -1,7 +1,7 @@
 # Decap CMS config. Only people with write access to the GitHub repo can log in.
 backend:
   name: github
-  repo: alenbenny949-eng/alkos1
+  repo: alenbenny949-eng/alkos3
   branch: main
   # On Netlify, enable Site settings > Access control > OAuth > GitHub, so no extra server is needed.
 
