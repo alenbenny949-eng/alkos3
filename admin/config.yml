@@ -1,0 +1,29 @@
+# Decap CMS config. Only people with write access to the GitHub repo can log in.
+backend:
+  name: github
+  repo: alenbenny949-eng/alkos1
+  branch: main
+  # On Netlify, enable Site settings > Access control > OAuth > GitHub, so no extra server is needed.
+
+media_folder: images/uploads
+public_folder: /images/uploads
+publish_mode: simple
+
+collections:
+  - name: blog
+    label: Blog posts
+    label_singular: Blog post
+    folder: blog/posts
+    extension: md
+    format: frontmatter
+    create: true
+    slug: "{{slug}}"
+    summary: "{{title}} · {{date}}"
+    sort: "date:desc"
+    fields:
+      - { label: Title, name: title, widget: string }
+      - { label: Date, name: date, widget: datetime, date_format: "YYYY-MM-DD", time_format: false, format: "YYYY-MM-DD" }
+      - { label: Category, name: tag, widget: string, required: false, hint: "e.g. Local SEO, Social Media" }
+      - { label: Short summary, name: excerpt, widget: text, hint: "Shown on the blog list" }
+      - { label: Cover image, name: cover, widget: image, required: false }
+      - { label: Content, name: body, widget: markdown }
